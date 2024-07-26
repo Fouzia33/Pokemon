@@ -7,8 +7,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detail-pokemon',
-  standalone: true,
-  imports: [PokemonTypeColorPipe,CommonModule],
   templateUrl: './detail-pokemon.component.html',
   styles: ``
 })

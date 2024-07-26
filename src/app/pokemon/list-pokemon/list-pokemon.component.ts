@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-pokemon',
-  standalone: true,
-  imports: [PokemonTypeColorPipe, BorderCardDirective, CommonModule],
   templateUrl: './list-pokemon.component.html',
 })
 export class ListPokemonComponent {

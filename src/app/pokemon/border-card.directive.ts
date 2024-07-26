@@ -2,7 +2,6 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[pkmnBorderCard]',
-  standalone: true
 })
 export class BorderCardDirective {
 
