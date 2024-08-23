@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon } from '../pokemon';
-import { POKEMONS } from '../mock-pokemon-list';
-import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
-import { CommonModule } from '@angular/common';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-detail-pokemon',
@@ -15,13 +13,14 @@ export class DetailPokemonComponent {
   pokemonList: Pokemon[];
   pokemon: Pokemon|undefined;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private pokemonService: PokemonService) { }
 
   ngOnInit() {
-    this.pokemonList = POKEMONS;
     const pokemonId: string|null = this.route.snapshot.paramMap.get('id');
-    this.pokemon = this.pokemonList.find(pokemon => pokemon.id === Number(pokemonId));
+    if (pokemonId) {
+      this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
      }
+  }
 
   goToPokemonList() {
     window.history.back();

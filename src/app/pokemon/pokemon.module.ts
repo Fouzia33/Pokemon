@@ -7,6 +7,7 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { RouterModule, Routes } from '@angular/router';
 import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
+import { FormsModule } from '@angular/forms';
 
 
 export const pokemonRoutes: Routes = [
@@ -16,12 +17,13 @@ export const pokemonRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    BorderCardDirective, PokemonTypeColorPipe, DetailPokemonComponent, ListPokemonComponent,
-  ],
+      BorderCardDirective, PokemonTypeColorPipe, DetailPokemonComponent, ListPokemonComponent,
+    ],
   imports: [
     CommonModule,
     RouterModule.forChild(pokemonRoutes),
-  ]
+    FormsModule
+  ],
 })
 export class PokemonModule { 
   pokemonList: Pokemon[] = POKEMONS;

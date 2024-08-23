@@ -1,8 +1,8 @@
 import { Component} from '@angular/core';
-import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { PokemonModule } from './pokemon/pokemon.module';
-import { routes } from './app.routes';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,7 @@ import { routes } from './app.routes';
     RouterOutlet,
     CommonModule,
     RouterLink,
+    FormsModule
   ],
   templateUrl:'app.component.html',
 })
