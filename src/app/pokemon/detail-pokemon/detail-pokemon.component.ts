@@ -13,7 +13,7 @@ export class DetailPokemonComponent {
   pokemonList: Pokemon[];
   pokemon: Pokemon|undefined;
 
-  constructor(private route: ActivatedRoute, private pokemonService: PokemonService) { }
+  constructor(private route: ActivatedRoute, private pokemonService: PokemonService, private router: Router) { }
 
   ngOnInit() {
     const pokemonId: string|null = this.route.snapshot.paramMap.get('id');
@@ -24,5 +24,9 @@ export class DetailPokemonComponent {
 
   goToPokemonList() {
     window.history.back();
+  }
+
+  goToEditPokemon(pokemon : Pokemon) {
+    this.router.navigate(['/edit/pokemon', pokemon?.id]);
   }
 }
